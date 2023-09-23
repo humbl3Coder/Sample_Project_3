@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Landing">
+   <children>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="1000.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Welcome to Well Being General Medicine Health System">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutY="50.0" prefHeight="50.0" prefWidth="250.0">
+         <children>
+            <TextField fx:id="searchAppTxt" alignment="CENTER" onAction="#onActionSearchApp" prefHeight="25.0" prefWidth="220.0" promptText="Search for Appointment by ID or Text" />
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding></HBox>
+      <HBox alignment="CENTER_RIGHT" layoutX="250.0" layoutY="50.0" prefHeight="50.0" prefWidth="250.0">
+         <children>
+            <Label text="Upcoming Appointments">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="500.0" layoutY="50.0" prefHeight="50.0" prefWidth="500.0" spacing="20.0">
+         <children>
+            <RadioButton fx:id="weekRBtn" mnemonicParsing="false" onAction="#onWeekly" prefWidth="100.0" text="Current Week">
+               <toggleGroup>
+                  <ToggleGroup fx:id="WorMTG" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="monthRBtn" mnemonicParsing="false" onAction="#onMonthly" text="Current Month" toggleGroup="$WorMTG" />
+            <RadioButton fx:id="allRBtn" mnemonicParsing="false" onAction="#onAll" prefWidth="100.0" text="All" toggleGroup="$WorMTG" />
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </HBox>
+      <HBox layoutY="100.0" prefHeight="200.0" prefWidth="1000.0">
+         <children>
+            <TableView fx:id="AppTableView" prefHeight="200.0" prefWidth="1000.0">
+              <columns>
+                <TableColumn fx:id="appIDCol" prefWidth="50.0" text="App ID" />
+                <TableColumn fx:id="appTitleCol" prefWidth="150.0" text="Title" />
+                  <TableColumn fx:id="appDescCol" prefWidth="125.0" text="Description" />
+                  <TableColumn fx:id="appLocCol" prefWidth="83.0" text="Location" />
+                  <TableColumn fx:id="appPhyCol" prefWidth="130.0" text="Physician" />
+                  <TableColumn fx:id="appTypeCol" prefWidth="100.0" text="Type" />
+                  <TableColumn fx:id="appStartCol" prefWidth="110.0" text="Start Date/Time" />
+                  <TableColumn fx:id="appEndCol" prefWidth="110.0" text="End Date/Time" />
+                  <TableColumn fx:id="appPatIDCol" prefWidth="50.0" text="Pat ID" />
+                  <TableColumn fx:id="appUseIDCol" prefWidth="50.0" text="User ID" />
+              </columns>
+               <HBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </HBox.margin>
+            </TableView>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutY="300.0" prefHeight="50.0" prefWidth="500.0">
+         <children>
+            <Label fx:id="appErrMsgLbl" alignment="CENTER">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+         </children></HBox>
+      <HBox alignment="CENTER_RIGHT" layoutX="500.0" layoutY="300.0" prefHeight="50.0" prefWidth="500.0" spacing="20.0">
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onActionAddAppForm" prefWidth="75.0" text="Add" />
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onActionModAppForm" prefWidth="75.0" text="Modify" />
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onActionDelApp" prefWidth="75.0" text="Delete" />
+         </children>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" layoutY="350.0" prefHeight="50.0" prefWidth="250.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+      <HBox layoutY="400.0" prefHeight="200.0" prefWidth="1000.0">
+         <children>
+            <TableView fx:id="PatTableView" prefHeight="200.0" prefWidth="1000.0">
+              <columns>
+                <TableColumn fx:id="patIDCol" prefWidth="50.0" text="Pat ID" />
+                <TableColumn fx:id="patCnameCol" prefWidth="175.0" text="Customer Name" />
+                  <TableColumn fx:id="patAddCol" prefWidth="210.0" text="Address" />
+                  <TableColumn fx:id="patStCol" prefWidth="150.0" text="State" />
+                  <TableColumn fx:id="patPosCol" prefWidth="100.0" text="Postal Code" />
+                  <TableColumn fx:id="patPhoCol" prefWidth="150.0" text="Phone" />
+                  <TableColumn fx:id="patCovCol" prefWidth="125.0" text="Coverage" />
+              </columns>
+               <HBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </HBox.margin>
+            </TableView>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutY="600.0" prefHeight="50.0" prefWidth="500.0">
+         <children>
+            <Label fx:id="patErrMsgLbl">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+         </children></HBox>
+      <HBox alignment="CENTER_RIGHT" layoutX="500.0" layoutY="600.0" prefHeight="50.0" prefWidth="500.0" spacing="20.0">
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onActionPatAddForm" prefWidth="75.0" text="Add" />
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onActionModPatForm" prefWidth="75.0" text="Modify" />
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onActionDelPat" prefWidth="75.0" text="Delete" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets right="20.0" />
+         </padding></HBox>
+      <HBox alignment="CENTER" layoutY="350.0" prefHeight="50.0" prefWidth="250.0">
+         <children>
+            <TextField fx:id="searchPatTxt" alignment="CENTER" minWidth="-Infinity" onAction="#onActionSearchPat" prefHeight="25.0" prefWidth="220.0" promptText=" Search for Patient by ID or Text">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin></TextField>
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutY="650.0" prefHeight="50.0" prefWidth="500.0">
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onActionReportsBtn" prefWidth="100.0" text="Reports" />
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" layoutX="500.0" layoutY="650.0" prefHeight="50.0" prefWidth="500.0" spacing="20.0">
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onActionLogoutBtn" prefWidth="75.0" text="Logout" />
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onActionExitBtn" prefWidth="75.0" text="Exit" />
+         </children>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" layoutX="250.0" layoutY="350.0" prefHeight="50.0" prefWidth="250.0">
+         <children>
+            <Label text="Patients">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="500.0" layoutY="350.0" prefHeight="50.0" prefWidth="500.0" spacing="20.0">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <children>
+            <RadioButton fx:id="InsBtn" mnemonicParsing="false" onAction="#onInsured" prefWidth="100.0" text="Insured">
+               <toggleGroup>
+                  <ToggleGroup fx:id="InsMTG" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="UnBtn" mnemonicParsing="false" onAction="#OnUninsured" prefWidth="100.0" text="UnInsured" toggleGroup="$InsMTG" />
+            <RadioButton fx:id="allPatsBtn" mnemonicParsing="false" onAction="#onActionAllPats" text="All" toggleGroup="$InsMTG" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

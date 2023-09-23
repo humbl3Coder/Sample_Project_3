@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Reports">
+   <children>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="800.0">
+         <children>
+            <Label text="Reports">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children></HBox>
+      <HBox alignment="CENTER_LEFT" layoutY="50.0" prefHeight="50.0" prefWidth="400.0">
+         <children>
+            <Label text="Schedule for each Physician">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </HBox>
+      <VBox layoutY="100.0" prefHeight="200.0" prefWidth="800.0">
+         <children>
+            <TableView fx:id="phyTableView" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="schAppCol" prefWidth="55.0" text="App ID" />
+                <TableColumn fx:id="schTitleCol" prefWidth="150.0" text="Title" />
+                  <TableColumn fx:id="schDescCol" prefWidth="145.0" text="Description" />
+                  <TableColumn fx:id="schTypeCol" prefWidth="133.0" text="Type" />
+                  <TableColumn fx:id="schStartCol" prefWidth="110.0" text="Start Date/Time" />
+                  <TableColumn fx:id="schEndCol" prefWidth="110.0" text="End Date/Time" />
+                  <TableColumn fx:id="schPatCol" prefWidth="55.0" text="Pat ID" />
+              </columns>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </TableView>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" layoutX="400.0" layoutY="50.0" prefHeight="50.0" prefWidth="400.0" spacing="20.0">
+         <children>
+            <ComboBox fx:id="phyComboBox" prefWidth="150.0" />
+            <Button mnemonicParsing="false" onAction="#onActionSelect" text="Select" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutY="300.0" prefHeight="50.0" prefWidth="400.0">
+         <children>
+            <Label layoutY="200.0" text="Appointments set by each User">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" layoutY="550.0" prefHeight="40.0" prefWidth="800.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onActionRepCancel" prefHeight="25.0" prefWidth="75.0" text="Cancel" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
+      </HBox>
+      <HBox layoutY="350.0" prefHeight="200.0" prefWidth="800.0">
+         <children>
+            <TableView fx:id="useTableView" prefHeight="200.0" prefWidth="800.0">
+              <columns>
+                <TableColumn fx:id="useAppCol" prefWidth="55.0" text="App ID" />
+                <TableColumn fx:id="useTitleCol" prefWidth="150.0" text="Title" />
+                  <TableColumn fx:id="useDescCol" prefWidth="145.0" text="Description" />
+                  <TableColumn fx:id="useTypeCol" prefWidth="133.0" text="Type" />
+                  <TableColumn fx:id="useStartCol" prefWidth="110.0" text="Start Date/Time" />
+                  <TableColumn fx:id="useEndCol" prefWidth="110.0" text="End Date/Time" />
+                  <TableColumn fx:id="usePatCol" prefWidth="55.0" text="Pat ID" />
+              </columns>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </TableView>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="400.0" layoutY="300.0" prefHeight="50.0" prefWidth="400.0" spacing="20.0">
+         <children>
+            <ComboBox fx:id="useComboBox" prefWidth="150.0" />
+            <Button mnemonicParsing="false" onAction="#onActionSelectUse" text="Select" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
